@@ -10,7 +10,7 @@ class GetPrograms:
     response = requests.get(URL)
     return response.content
 
-  def program_agencies(self):
+  def program_school(self):
     # we use the JSON library to parse the API response into nicely formatted JSON
         programs_list = []
         programs = json.loads(self.get_programs())
@@ -23,7 +23,7 @@ class GetPrograms:
 #print(programs)
 
 programs = GetPrograms()
-agencies = programs.program_agencies()
+programs_schools = programs.program_school()
 
-for agency in set(agencies):
-    print(agency)
+for school in set(programs_schools):
+    print(school)
